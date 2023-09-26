@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.header {
+  height: 100px;
+  background: #ffc3c3;
+}
+.header-block {}
+
+.main {
+  height: 100px;
+  background: #c3ffd6;
+}
+.main-block {}
+
+.footer {
+  height: 100px;
+  background: #c3d1ff;
+}
+.footer-block {}
