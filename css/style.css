@@ -32,6 +32,8 @@
 }
 .main-block {}
 
+.calculate-sum__result{}
+
 .footer {
   height: 100px;
   background: #c3d1ff;
