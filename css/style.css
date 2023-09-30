@@ -34,9 +34,9 @@ body{
   
 }
 
-.menu-item a{
+.menu-item a, .footer-menu-item a{
   text-decoration: none;
-  color: rgb(223, 63, 0);
+  color: black;
 }
 
 .btn-helloWorld{
