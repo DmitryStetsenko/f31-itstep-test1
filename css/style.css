@@ -1,3 +1,14 @@
+html{
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  height: 100%;
+  width: 100%;
+}
 * {
   margin: 0;
   padding: 0;
@@ -10,12 +21,13 @@
 }
 
 .header {
-  height: 100px;
+  height: 33%;
   background: #ffc3c3;
 }
 .header-block {
   
 }
+
 .menu-item a{
   text-decoration: none;
   color: rgb(223, 63, 0);
@@ -33,7 +45,7 @@
 }
 
 .main {
-  height: 100px;
+  height: 33%;
   background: #c3ffd6;
 }
 .main-block {
@@ -45,7 +57,7 @@
 }
 
 .footer {
-  height: 100px;
+  height: 33%;
   background: #c3d1ff;
 }
 .footer-block {
