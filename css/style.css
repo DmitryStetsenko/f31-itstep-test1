@@ -45,7 +45,7 @@ body{
 }
 
 .main {
-  height: 33%;
+  height: 53%;
   background: #c3ffd6;
 }
 .main-block {
@@ -57,7 +57,7 @@ body{
 }
 
 .footer {
-  height: 33%;
+  height: 13%;
   background: #c3d1ff;
 }
 .footer-block {
