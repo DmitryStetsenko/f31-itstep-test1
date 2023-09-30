@@ -39,7 +39,7 @@ body{
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   flex-direction: column;
 }
 
@@ -151,6 +151,6 @@ ul.footer-menu-list {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   flex-wrap: nowrap;
 }
