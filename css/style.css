@@ -115,6 +115,19 @@ aside.sidebar {
 .calculate-sum__result{
   
 }
+.important-news{
+  width: 200px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.important-news .item{
+  width: 50px;
+  border: 1px solid silver;
+  margin: 5px;
+  padding: 10px;
+  list-style: none;
+  font-size: 16px;
+}
 
 .footer {
   width: 100%;
