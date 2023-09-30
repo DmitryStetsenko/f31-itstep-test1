@@ -13,7 +13,13 @@
   height: 100px;
   background: #ffc3c3;
 }
-.header-block {}
+.header-block {
+  
+}
+.menu-item a{
+  text-decoration: none;
+  color: rgb(223, 63, 0);
+}
 
 .btn-helloWorld{
   padding: 5px 10px;
@@ -30,12 +36,18 @@
   height: 100px;
   background: #c3ffd6;
 }
-.main-block {}
+.main-block {
+  
+}
 
-.calculate-sum__result{}
+.calculate-sum__result{
+  
+}
 
 .footer {
   height: 100px;
   background: #c3d1ff;
 }
-.footer-block {}
+.footer-block {
+  
+}
