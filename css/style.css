@@ -24,11 +24,27 @@ body{
 
 .header {
   width: 100%;
-  height: 13%;
+  height: 14%;
   background: #ffc3c3;
 }
+
+.container-header{
+  width: 100%;
+  height: 100%;
+}
+
+.header-block{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .header-block {
-  
+  width: 100%;
+  height: 100%;
 }
 
 .menu-item a, .footer-menu-item a{
@@ -71,11 +87,19 @@ body{
 aside.sidebar {
   width: 20%;
   height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .main-block {
   width: 80%;
   height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .calculate-sum__result{
@@ -87,6 +111,16 @@ aside.sidebar {
   height: 13%;
   background: #c3d1ff;
 }
+
+.container-footer{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .footer-block {
   
 }
