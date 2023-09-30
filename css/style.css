@@ -14,6 +14,7 @@ body{
   justify-content: center;
   align-content: center;
   flex-wrap: nowrap;
+  font-family: Helvetica;
 }
 * {
   margin: 0;
