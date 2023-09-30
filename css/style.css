@@ -8,6 +8,12 @@ html{
 body{
   height: 100%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: nowrap;
 }
 * {
   margin: 0;
@@ -21,7 +27,7 @@ body{
 }
 
 .header {
-  height: 33%;
+  height: 13%;
   background: #ffc3c3;
 }
 .header-block {
@@ -45,7 +51,7 @@ body{
 }
 
 .main {
-  height: 53%;
+  height: 73%;
   background: #c3ffd6;
 }
 .main-block {
