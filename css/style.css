@@ -85,6 +85,26 @@ body{
   flex-wrap: nowrap;
   flex-direction: row;
 }
+.featured-products {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.featured-products__title {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.featured-products__list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.featured-products__item {
+  margin-bottom: 5px;
+}
 
 aside.sidebar {
   width: 20%;
