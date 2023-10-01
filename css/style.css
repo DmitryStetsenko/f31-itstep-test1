@@ -123,6 +123,35 @@ aside.sidebar {
   justify-content: space-around;
   flex-direction: column;
 }
+.testimonials {
+  background-color: #e6f7ff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.testimonials__title {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.testimonials__list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.testimonials__item {
+  margin-bottom: 10px;
+}
+
+.testimonials__text {
+  font-style: italic;
+}
+
+.testimonials__author {
+  font-weight: bold;
+}
+
 
 .calculate-sum {
   display: flex;
@@ -135,6 +164,8 @@ aside.sidebar {
 .calculate-sum__result{
   
 }
+
+
 .important-news{
   width: 200px;
   display: flex;
