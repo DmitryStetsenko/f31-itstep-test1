@@ -1,14 +1,17 @@
 const doc = document;
 
-let todos = ['TOdo1','TOdo2','TOdo3','TOdo4'];
+let todos = ['TOdo1', 'TOdo2', 'TOdo3', 'TOdo4'];
 
 renderTodos(todos, '#todo-list');
 
+getData('http://localhost:3000/todos/');
+
+
 // ----functions---------------
 
-function renderTodos(todos, parElSelector){
+function renderTodos(todos, parElSelector) {
     todos.forEach((todo, i) => {
-        addTodo(parElSelector, todo, i+1);
+        addTodo(parElSelector, todo, i + 1);
     });
 }
 
@@ -31,4 +34,10 @@ function addTodo(perElSelector, title, id) {
         parEl.innerHTML += newTodoItem;
 
     }
+}
+
+async function getData(url) {
+    const res = await fetch(url);
+    const data = await res.json();
+    return data;
 }
