@@ -1,0 +1,13 @@
+.todos{}
+
+.todo{
+    display: flex;
+    flex-direction: row;
+}
+.todo__content{
+    display: flex;
+    flex-direction: row;
+}
+.todo__number{}
+.todo__title{}
+.btn-delete{}
