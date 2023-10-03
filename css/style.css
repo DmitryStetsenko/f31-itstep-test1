@@ -20,6 +20,7 @@ button, input[type="checkbox"], .title, .usersList div, .historyList div{
 }
 
 input[type="text"]::placeholder{
+    color: black;
     text-align: center;
 }
 
@@ -141,7 +142,7 @@ button.filterFirst{
     left: 10%;
     position: absolute;
     top: 10%;
-    transition: 1s;
+    transition: 0.5s;
     width: 10%;
 }
 
@@ -163,7 +164,7 @@ button.filterFirst{
     position: absolute;
     right: 10%;
     top: 10%;
-    transition: 1s;
+    transition: 0.5s;
     width: 10%;
 }
 

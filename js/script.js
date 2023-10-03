@@ -67,21 +67,21 @@ async function getData(url) {
 }
 
 function selectUser(){
-    if(users.style.display == ""){
-        users.style.display = "none";
+    if(users.style.opacity == "1"){
+        users.style.opacity = "0";
     }
     else{
-        users.style.display = "";
+        users.style.opacity = "1";
     }
 }
 
 function selectHistory(){
     
-    if(history.style.display == ""){
-        history.style.display = "none";
+    if(history.style.opacity == "1"){
+        history.style.opacity = "0";
     }
     else{
-        history.style.display = "";
+        history.style.opacity = "1";
     }
 }
 
