@@ -18,9 +18,9 @@ body{
 }
 
 .container{
-    margin: 1% 0 0 0;
-    width: 50%;
-    height: 99%;
+    margin: 2% 0 0 0;
+    width: 45%;
+    height: 98%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -35,16 +35,7 @@ body{
     margin: 0 0 3% 0;
 }
 
-.buttons1 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    width: 100%;
-    height: 5%;
-}
-
-.buttons2{
+.buttons1, .buttons2 {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -54,16 +45,17 @@ body{
 }
 
 input.SearchTodo {
-    width: 70%;
+    width: 85%;
     height: 100%;
     border: 1px solid black;
+    margin: 0 2% 0 0;
 }
 
 input.createNewTodo{
-    width: 35%;
+    width: 42.5%;
     height: 100%;
     border: 1px solid black;
-    margin: 0 1% 0 0;
+    margin: 0 2% 0 0;
 }
 
 button.filterFirst, button.add{
