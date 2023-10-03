@@ -4,6 +4,15 @@
     box-sizing: border-box;
 }
 
+html{
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+}
 
 .todos{
     border: 1px solid silver;
@@ -27,6 +36,20 @@
 }
 .todo__content *{
     margin-right: 5px;
+}
+
+.users{
+    position: absolute;
+    left: 35%;
+    top: 10%;
+    border: 1px solid grey;
+}
+
+.history{
+    position: absolute;
+    right: 32%;
+    top: 10%;
+    border: 1px solid grey;
 }
 .todo__number{}
 .todo__title{}
