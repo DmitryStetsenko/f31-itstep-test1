@@ -35,7 +35,7 @@ body{
     margin: 0 0 3% 0;
 }
 
-.buttons1, .buttons2 {
+.buttons1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -44,15 +44,32 @@ body{
     height: 5%;
 }
 
-input.SearchTodo, input.createNewTodo {
+.buttons2{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    height: 5%;
+}
+
+input.SearchTodo {
     width: 70%;
     height: 100%;
     border: 1px solid black;
 }
 
-button.filterFirst, button.add{
-    width: 20%;
+input.createNewTodo{
+    width: 35%;
     height: 100%;
+    border: 1px solid black;
+    margin: 0 1% 0 0;
+}
+
+button.filterFirst, button.add{
+    width: 15%;
+    height: 100%;
+    border-radius: 10px;
 }
 
 .totalAmountOfTodos {
