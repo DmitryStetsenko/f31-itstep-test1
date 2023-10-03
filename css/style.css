@@ -1,12 +1,32 @@
-.todos{}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.todos{
+    border: 1px solid silver;
+    width: 300px;
+    padding: 10px;
+}
 
 .todo{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    
+    border: 1px solid silver;
+    margin: 5px;
+    padding: 5px;
 }
 .todo__content{
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
+}
+.todo__content *{
+    margin-right: 5px;
 }
 .todo__number{}
 .todo__title{}
