@@ -1,32 +1,28 @@
 html{
-    width: 100%;
+    box-sizing: border-box;
+    font-family: helvetica;
     height: 100%;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: helvetica;
     text-align: center;
+    width: 100%;
 }
 
 body{
-    width: 100%;
-    height: 100%;
     display: flex;
+    height: 100%;
     justify-content: center;
-}
-
-button, input[type="checkbox"], .title{
-    cursor: pointer;
+    width: 100%;
 }
 
 .container{
-    margin: 2% 0 0 0;
-    width: 45%;
-    height: 98%;
+    align-items: flex-start;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    height: 98%;
     justify-content: flex-start;
+    margin: 2% 0 0 0;
+    width: 45%;
 }
 
 .title {
@@ -34,46 +30,59 @@ button, input[type="checkbox"], .title{
 }
 
 .buttons1 {
-    margin: 0 0 3% 0;
-}
-
-.buttons1, .buttons2 {
-    display: flex;
-    justify-content: flex-start;
     align-items: center;
+    display: flex;
     flex-direction: row;
-    width: 100%;
     height: 5%;
+    justify-content: flex-start;
+    margin: 0 0 3% 0;
+    width: 100%;
 }
 
 input.SearchTodo {
-    width: 85%;
-    height: 100%;
     border: 1px solid black;
+    height: 100%;
     margin: 0 2% 0 0;
+    width: 85%;
+}
+
+button.add{
+    background: lightgreen;
+    border-radius: 10px;
+    border: 1px solid green;
+    height: 100%;
+    width: 15%;
+}
+
+.buttons2 {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    height: 5%;
+    justify-content: flex-start;
+    margin: 0 0 3% 0;
+    width: 100%;
 }
 
 input.createNewTodo{
-    width: 42.5%;
-    height: 100%;
     border: 1px solid black;
+    height: 100%;
     margin: 0 2% 0 0;
+    width: 42.5%;
 }
 
 button.filterFirst, button.add{
-    width: 15%;
-    height: 100%;
     border-radius: 10px;
+    height: 100%;
+    width: 15%;
 }
 
 button.filterFirst{
     background: lightblue;
     border: 1px solid blue;
-}
-
-button.add{
-    background: lightgreen;
-    border: 1px solid green;
+    border-radius: 10px;
+    height: 100%;
+    width: 15%;
 }
 
 .totalAmountOfTodos {
@@ -81,41 +90,65 @@ button.add{
 }
 
 .todos{
-    width: 100%;
-    padding: 20px 0 20px 0px;
+    align-items: center;
     border: 1px solid black;
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
+    justify-content: center;
+    padding: 20px 0 20px 0px;
+    width: 100%;
 }
 
 .todo{
     display: flex;
     flex-direction: row;
+    height: 45px;
     justify-content: space-between;
     width: 95%;
-    height: 45px;
 }
+
 .todoContent{
+    align-items: center;
+    border: 1px solid black;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    width: 87%;
     height: 100%;
-    border: 1px solid black;
+    justify-content: flex-start;
     padding: 0 0 0 1%;
+    width: 87%;
 }
+
 .todoContent *{
     margin-right: 2%;
 }
 
+.btn-delete{
+    background: #FF7276;
+    border-radius: 5px;
+    border: 1px solid red;
+    height: 100%;
+    width: 9%;
+}
+
 .users{
-    position: absolute;
     left: 10%;
+    position: absolute;
     top: 10%;
     width: 10%;
+}
+
+.listU{
+    border-bottom: none;
+    border: 1px solid black;
+    padding: 7px 0 7px 0;
+}
+
+.usersList{
+    border: 1px solid black;
+}
+
+.usersList div{
+    padding: 5px 0 5px 0;
 }
 
 .history{
@@ -125,27 +158,16 @@ button.add{
     width: 10%;
 }
 
-.listH, .listU{
-    border: 1px solid black;
+.listH{
     border-bottom: none;
+    border: 1px solid black;
     padding: 7px 0 7px 0;
 }
 
-.historyList, .usersList{
+.historyList{
     border: 1px solid black;
 }
-.historyList div, .usersList div{
+
+.historyList div{
     padding: 5px 0 5px 0;
-}
-
-.todoNumber{}
-
-.todoTitle{}
-
-.btn-delete{
-    width: 9%;
-    height: 100%;
-    background: #FF7276;
-    border: 1px solid red;
-    border-radius: 5px;
 }

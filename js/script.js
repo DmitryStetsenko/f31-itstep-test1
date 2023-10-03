@@ -22,7 +22,7 @@ getData(api.todos)
 
 
 
-// ----functions---------------
+// ----functions----
 
 function renderTodos(todos, parElSelector) {
     todos.forEach((todo, i) => {
