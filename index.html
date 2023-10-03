@@ -22,6 +22,7 @@
 
     <div class="todos">
       <h1>Todo list</h1>
+      <h3>Selected User: <span id="selected-user">User1</span></h3>
       <div class="todos__count">Todos coutnt: <span>1</span></div>
 
       <ul id="todo-list">
@@ -29,11 +30,11 @@
         <!-- приклад -->
         <li class="todo">
           <div class="todo__content">
-            <div class="todo__number"><span>1</span>.</div>
+            <div><span class="todo__number">1</span>.</div>
             <input id="todo__checkbox-1" type="checkbox">
             <div class="todo__title">Lorem ipsum dolor sit.</div>
           </div>
-          <button class="btn-delete" onclick="delete('id')">DEL</button>
+          <button class="btn-delete">DEL</button> <!-- onclick="delete('id')" -->
         </li>
 
     </div>
