@@ -8,7 +8,6 @@
 .container {
   max-width: 1000px;
   margin: 0 auto;
-<<<<<<< HEAD
   display: flex;
   align-items: center;
   justify-content: center;
@@ -176,9 +175,6 @@ ul.footer-menu-list {
 }
 
 
-=======
-}
->>>>>>> 119e9ef81ec975b75fe83fc7d0cafa34bcbca4c9
 
 .about_btn{padding: 10px;
 background-color: #c3d1ff;
