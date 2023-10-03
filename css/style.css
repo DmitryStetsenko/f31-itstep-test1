@@ -15,6 +15,10 @@ body{
     justify-content: center;
 }
 
+button, input[type="checkbox"], .title{
+    cursor: pointer;
+}
+
 .container{
     margin: 2% 0 0 0;
     width: 45%;
@@ -93,7 +97,7 @@ button.add{
     width: 95%;
     height: 45px;
 }
-.todo__content{
+.todoContent{
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -103,7 +107,7 @@ button.add{
     border: 1px solid black;
     padding: 0 0 0 1%;
 }
-.todo__content *{
+.todoContent *{
     margin-right: 2%;
 }
 
@@ -134,9 +138,9 @@ button.add{
     padding: 5px 0 5px 0;
 }
 
-.todo__number{}
+.todoNumber{}
 
-.todo__title{}
+.todoTitle{}
 
 .btn-delete{
     width: 9%;
