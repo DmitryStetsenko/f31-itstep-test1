@@ -7,4 +7,3 @@ const getFromLocalStorage = key => localStorage.getItem(key);
 // Generate a random number between two given numbers
 const getRandomNumber = (from, to) => Math.floor(Math.random() * (to - from + 1)) + from;
 
-

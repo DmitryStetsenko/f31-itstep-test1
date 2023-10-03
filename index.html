@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="wclassth=device-wclassth, initial-scale=1.0">
   <link rel="stylesheet" href="./css/style.css">
   <title>Todo list</title>
 </head>
@@ -14,7 +14,7 @@
     <div onclick="selectUser()" class="title">USER TODO LIST</div>
     <div class="buttons1">
       <input label="Todo text" title="Todo text" placeholder="Todo text...." type="text" class="createNewTodo">
-      <button type="button" class="add" onclick="addMenu()">ADD</button>
+      <button type="button" class="add" onclick="selectHistory()">ADD</button>
     </div>
     <div class="buttons2">
       <input label="Todo text" title="Todo text" placeholder="Search todo...." type="text" class="SearchTodo">
@@ -27,18 +27,18 @@
         <div class="todo" style="margin: 0 0 2% 0;">
           <div class="todoContent">
             <div class="todoNumber">1.</div>
-            <input id="todoCheckbox1" type="checkbox">
+            <input class="todoCheckbox1" type="checkbox">
             <div class="todoTitle">Lorem ipsum dolor sit.</div>
           </div>
-          <button type="button" class="btn-delete" onclick="delete('id')" label="delete button">DEL</button>
+          <button type="button" class="btn-delete" onclick="deleteE(0)" label="delete button">DEL</button>
         </div>
         <div class="todo">
           <div class="todoContent">
             <div class="todoNumber">2.</div>
-            <input id="todoCheckbox1" type="checkbox">
+            <input class="todoCheckbox1" type="checkbox">
             <div class="todoTitle">Lorem ipsum dolor sit.</div>
           </div>
-          <button type="button" class="btn-delete" onclick="delete('id')" label="delete button">DEL</button>
+          <button type="button" class="btn-delete" onclick="deleteE(1)" label="delete button">DEL</button>
         </div>
   </div>
 

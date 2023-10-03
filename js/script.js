@@ -22,7 +22,9 @@ getData(api.todos)
 
 
 
-// ----functions----
+// ----Code----
+let users = document.querySelector(".users");
+let history = document.querySelector(".history");
 
 function renderTodos(todos, parElSelector) {
     todos.forEach((todo, i) => {
@@ -55,4 +57,31 @@ async function getData(url) {
     const res = await fetch(url);
     const data = await res.json();
     return data;
+}
+
+function selectUser(){
+    if(users.style.display == ""){
+        users.style.display = "none";
+    }
+    else{
+        users.style.display = "";
+    }
+}
+
+function selectHistory(){
+    
+    if(history.style.display == ""){
+        history.style.display = "none";
+    }
+    else{
+        history.style.display = "";
+    }
+}
+
+function filterFirst(){
+
+}
+
+function deleteE(id){
+
 }
