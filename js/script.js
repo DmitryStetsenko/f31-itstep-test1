@@ -90,5 +90,5 @@ function filterFirst(){
 }
 
 function deleteE(id){
-
+    todosE[id].remove()
 }
