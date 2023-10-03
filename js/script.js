@@ -1,10 +1,15 @@
 const doc = document;
 
+const api = {
+    todos: `http://localhost:3000/todos`,
+}
+
 let todos = ['TOdo1', 'TOdo2', 'TOdo3', 'TOdo4'];
 
-renderTodos(todos, '#todo-list');
+renderTodos(todos, '.todos');
 
-getData('http://localhost:3000/todos/');
+
+// console.log(getData(api.todos)) 
 
 
 // ----functions---------------
