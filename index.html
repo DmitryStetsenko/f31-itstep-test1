@@ -9,12 +9,14 @@
 </head>
 <body>
   <h1>USER TODO LIST</h1>
-  <form action="">
-      <inout type="text" class="createNewTodo">
-      <input type="submit">
-  </form>
-      <input type="text">
+  <inout type="text" class="createNewTodo">
+  <button class="add" onclick="addMenu()">ADD</button>
+  <input type="text" class="SearchTodo">
   <div class="filterFirst" onclick="filterFirst()"></div>
+  <div class="totalAmountOfTodos"></div>
+  <div class="todoList">
+    <div class="todo"><div class="todoNumber"></div><input type="checkbox">TEXT</div> <button class="delete" onclick="delete('id')"></button>
+  </div>
   <script src="./js/script.js"></script>
 </body>
 
