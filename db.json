@@ -3,6 +3,9 @@
     { "id": 1, "name": "user1" }
   ],
   "todos": [
-    { "id": 1, "userId": 1, "body": "some todo", "completed": false }
+    { "id": 1, "userId": 1, "body": "some todo", "completed": false },
+    { "id": 2, "userId": 1, "body": "some todo2", "completed": false },
+    { "id": 3, "userId": 1, "body": "some todo3", "completed": false },
+    { "id": 4, "userId": 1, "body": "some todo5", "completed": false }
   ]
 }
