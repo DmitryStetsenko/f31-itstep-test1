@@ -8,16 +8,16 @@ const api = {
 
 let todos = [];
 
-renderTodos(todos, '.todos');
 
 
 getData(api.todos)
     .then(data => {
         data.forEach(todo => todos.push(todo.body));
+        renderTodos(todos, '.todos');
         console.log(todos);
     })
     .catch(error => {
-        console.error('GET DATA ERROR!', error);
+        console.error('Введіть у консоль: json-server --watch db.json', error);
     });
 
 
