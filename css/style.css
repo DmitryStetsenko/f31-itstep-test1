@@ -96,7 +96,7 @@ button.filterFirst, button.add{
     position: absolute;
     left: 15%;
     top: 10%;
-    border: 1px solid grey;
+    
     
 }
 
@@ -104,12 +104,18 @@ button.filterFirst, button.add{
     position: absolute;
     right: 15%;
     top: 10%;
-    border: 1px solid grey;
+    
     
 }
 .todo__number{}
 .todo__title{}
 .btn-delete{}
 
-#users-list{padding: 5px 30px;}
-#history{padding: 5px 30px;}
+#users-list{padding: 5px 30px;
+border-radius: 10px;
+border: 1px solid grey;
+}
+#history{padding: 5px 30px;
+    border-radius: 10px;
+    border: 1px solid grey;
+}
