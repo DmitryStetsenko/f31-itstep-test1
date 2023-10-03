@@ -13,13 +13,50 @@ html{
 body{
     width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: center;
 }
 
-.container {
+.container{
+    margin: 1% 0 0 0;
+    width: 50%;
+    height: 99%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.title {
+    margin: 0 0 4% 0;
+}
+
+.buttons1 {
+    margin: 0 0 3% 0;
+}
+
+.buttons1, .buttons2 {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+    flex-direction: row;
+    width: 100%;
+    height: 5%;
+}
+
+input.SearchTodo, input.createNewTodo {
+    width: 70%;
+    height: 100%;
+    border: 1px solid black;
+}
+
+button.filterFirst, button.add{
+    width: 20%;
+    height: 100%;
+}
+
+.totalAmountOfTodos {
+    margin: 2% 0 2% 0;
 }
 
 .todos{

@@ -11,12 +11,16 @@
 <body>
 
   <div class="container">
-    <h1 onclick="selectUser()">USER TODO LIST</h1>
-    <inout type="text" class="createNewTodo">
-      <button class="add" onclick="addMenu()">ADD</button>
+    <div onclick="selectUser()" class="title">USER TODO LIST</div>
+    <div class="buttons1">
       <input type="text" class="SearchTodo">
-      <div class="filterFirst" onclick="filterFirst()"></div>
-      <div class="totalAmountOfTodos"></div>
+      <button class="add" onclick="addMenu()">ADD</button>
+    </div>
+    <div class="buttons2">
+      <input type="text" class="createNewTodo">
+      <button class="filterFirst" onclick="filterFirst()">latest first</button>
+    </div>
+      <div class="totalAmountOfTodos">Total Todos: 1</div>
 
       <div class="todos">
         <div class="todos__count">Todos coutnt: <span>1</span></div>
@@ -32,7 +36,7 @@
       </div>
 
       <div class="users">
-        <select name="users-list" id="users-list">
+        <select name="users-list" id="users-list" style="display: none;">
           <option value="">users list</option>
           <option value="1">user 1</option>
           <option value="2">user 2</option>
@@ -41,7 +45,7 @@
       </div>
 
       <div class="history">
-        <select name="History" id="history">
+        <select name="History" id="history" style="display: none;">
           <option value="">history</option>
           <option value="1">add todo(user 1)</option>
           <option value="2">add todo(user 2)</option>
