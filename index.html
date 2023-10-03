@@ -11,43 +11,46 @@
 <body>
 
   <div class="container">
+
     <h1 onclick="selectUser()">USER TODO LIST</h1>
-    <inout type="text" class="createNewTodo">
-      <button class="add" onclick="addMenu()">ADD</button>
-      <input type="text" class="SearchTodo">
-      <div class="filterFirst" onclick="filterFirst()"></div>
-      <div class="totalAmountOfTodos"></div>
 
-      <div class="todos">
-        <div class="todos__count">Todos coutnt: <span>1</span></div>
+    <input type="text" class="createNewTodo">
+    <button class="add" onclick="addMenu()">ADD</button>
+    <input type="text" class="SearchTodo">
+    <div class="filterFirst" onclick="filterFirst()"></div>
+    <div class="totalAmountOfTodos"></div>
 
-        <div class="todo">
-          <div class="todo__content">
-            <div class="todo__number"><span>1</span>.</div>
-            <input id="todo__checkbox-1" type="checkbox">
-            <div class="todo__title">Lorem ipsum dolor sit.</div>
-          </div>
-          <button class="btn-delete" onclick="delete('id')">DEL</button>
+    <div class="todos">
+      <div class="todos__count">Todos coutnt: <span>1</span></div>
+
+      <div class="todo">
+        <div class="todo__content">
+          <div class="todo__number"><span>1</span>.</div>
+          <input id="todo__checkbox-1" type="checkbox">
+          <div class="todo__title">Lorem ipsum dolor sit.</div>
         </div>
+        <button class="btn-delete" onclick="delete('id')">DEL</button>
       </div>
 
-      <div class="users">
-        <select name="users-list" id="users-list">
-          <option value="">users list</option>
-          <option value="1">user 1</option>
-          <option value="2">user 2</option>
-          <option value="3">user 3</option>
-        </select>
-      </div>
+    </div>
 
-      <div class="history">
-        <select name="History" id="history">
-          <option value="">history</option>
-          <option value="1">add todo(user 1)</option>
-          <option value="2">add todo(user 2)</option>
-          <option value="3">add todo(user 3)</option>
-        </select>
-      </div>
+    <div class="users">
+      <select name="users-list" id="users-list">
+        <option value="">users list</option>
+        <option value="1">user 1</option>
+        <option value="2">user 2</option>
+        <option value="3">user 3</option>
+      </select>
+    </div>
+
+    <div class="history">
+      <select name="History" id="history">
+        <option value="">history</option>
+        <option value="1">add todo(user 1)</option>
+        <option value="2">add todo(user 2)</option>
+        <option value="3">add todo(user 3)</option>
+      </select>
+    </div>
   </div>
 
   <script src="./js/script.js"></script>
