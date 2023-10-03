@@ -15,26 +15,23 @@
     <button class="add" onclick="addMenu()">ADD</button>
     <input type="text" class="SearchTodo">
     <div class="filterFirst" onclick="filterFirst()"></div>
-
     <div class="totalAmountOfTodos"></div>
 
     <div class="todos">
-      <div class="todo__count">1</div>
-      <div class="todo__list">
+      <div class="todos__count">1</div>
 
-        <div class="todo">
-          <div class="todo__content">
-            <div class="todo__number">1</div>
-            <input class="checkbox todo__checkbox" type="checkbox">
-            <div class="todo__title">Lorem ipsum dolor sit.</div>
-          </div>
-          <button class="delete" onclick="delete('id')">DEL</button>
+      <div class="todo">
+        <div class="todo__content">
+          <div class="todo__number"><span>1</span>.</div>
+          <input type="checkbox">
+          <div class="todo__title">Lorem ipsum dolor sit.</div>
         </div>
-        
       </div>
+      <button class="delete" onclick="delete('id')">DEL</button>
 
+    </div>
 
-      <script src="./js/script.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
