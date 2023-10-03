@@ -106,26 +106,21 @@ button.add{
 
 .users{
     position: absolute;
-    left: 35%;
+    left: 15%;
     top: 10%;
     border: 1px solid grey;
+    
 }
 
 .history{
     position: absolute;
-    right: 32%;
+    right: 15%;
     top: 10%;
     border: 1px solid grey;
+    
 }
 
 .todo__number{}
 
 .todo__title{}
-
-.btn-delete{
-    width: 9%;
-    height: 100%;
-    background: #FF7276;
-    border: 1px solid red;
-    border-radius: 5px;
-}
+.btn-delete{}

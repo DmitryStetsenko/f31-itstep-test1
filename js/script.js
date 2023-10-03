@@ -1,15 +1,25 @@
+// json-server --watch db.json
+
 const doc = document;
 
 const api = {
     todos: `http://localhost:3000/todos`,
 }
 
-let todos = ['TOdo1', 'TOdo2', 'TOdo3', 'TOdo4'];
+let todos = [];
 
 renderTodos(todos, '.todos');
 
 
-// console.log(getData(api.todos)) 
+getData(api.todos)
+    .then(data => {
+        data.forEach(todo => todos.push(todo.body));
+        console.log(todos);
+    })
+    .catch(error => {
+        console.error('GET DATA ERROR!', error);
+    });
+
 
 
 // ----functions---------------
