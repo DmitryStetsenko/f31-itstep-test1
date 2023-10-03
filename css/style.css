@@ -141,6 +141,7 @@ button.filterFirst{
     left: 10%;
     position: absolute;
     top: 10%;
+    transition: 1s;
     width: 10%;
 }
 
@@ -162,6 +163,7 @@ button.filterFirst{
     position: absolute;
     right: 10%;
     top: 10%;
+    transition: 1s;
     width: 10%;
 }
 
