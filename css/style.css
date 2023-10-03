@@ -15,6 +15,10 @@ body{
     width: 100%;
 }
 
+button, input[type="checkbox"], .title{
+    cursor: pointer;
+}
+
 .container{
     align-items: flex-start;
     display: flex;
