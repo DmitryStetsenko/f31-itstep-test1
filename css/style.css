@@ -94,17 +94,22 @@ button.filterFirst, button.add{
 
 .users{
     position: absolute;
-    left: 35%;
+    left: 15%;
     top: 10%;
     border: 1px solid grey;
+    
 }
 
 .history{
     position: absolute;
-    right: 32%;
+    right: 15%;
     top: 10%;
     border: 1px solid grey;
+    
 }
 .todo__number{}
 .todo__title{}
 .btn-delete{}
+
+#users-list{padding: 5px 30px;}
+#history{padding: 5px 30px;}
