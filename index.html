@@ -17,7 +17,7 @@
       <button type="button" class="add" onclick="selectHistory()">ADD</button>
     </div>
     <div class="buttons2">
-      <input label="Search input" title="Search input" placeholder="Search todo...." type="text" class="SearchTodo">
+      <input label="Search input" title="Search input" placeholder="Search todo...." oninput="search()" type="text" class="SearchTodo">
       <button type="button" class="filterFirst" onclick="filterFirst()">latest first</button>
     </div>
       <div class="totalAmountOfTodos"></div>
@@ -61,6 +61,7 @@
   </div>
 
   <script src="./js/script.js"></script>
+  <script src="./js/functions.js"></script>
 </body>
 
 </html>

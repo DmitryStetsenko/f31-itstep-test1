@@ -27,6 +27,8 @@ let users = document.querySelector(".users");
 let history = document.querySelector(".history");
 let todosE = document.querySelectorAll(".todo");
 let totalAmountOfTodos = document.querySelector(".totalAmountOfTodos");
+let searchTodo = document.querySelector(".SearchTodo");
+let todoTitle = document.querySelectorAll(".todoTitle");
 
 setInterval(() => {
     todosE = document.querySelectorAll(".todo");
@@ -83,6 +85,11 @@ function selectHistory(){
     else{
         history.style.opacity = "1";
     }
+}
+
+function search(){
+    let InnerHTMLArray = getInnerHTMLArray(todoTitle);
+    console.log(searchQueries(searchTodo.value,InnerHTMLArray))
 }
 
 function filterFirst(){
