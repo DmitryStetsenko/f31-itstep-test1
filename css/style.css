@@ -108,7 +108,7 @@ button.add{
     position: absolute;
     left: 15%;
     top: 10%;
-    border: 1px solid grey;
+    
     
 }
 
@@ -116,7 +116,7 @@ button.add{
     position: absolute;
     right: 15%;
     top: 10%;
-    border: 1px solid grey;
+    
     
 }
 
