@@ -13,12 +13,12 @@
   <div class="container">
     <div onclick="selectUser()" class="title">USER TODO LIST</div>
     <div class="buttons1">
-      <input type="text" class="SearchTodo">
-      <button class="add" onclick="addMenu()">ADD</button>
+      <input label="Todo text" title="Todo text" placeholder="Todo text...." type="text" class="createNewTodo">
+      <button type="button" class="add" onclick="addMenu()">ADD</button>
     </div>
     <div class="buttons2">
-      <input type="text" class="createNewTodo">
-      <button class="filterFirst" onclick="filterFirst()">latest first</button>
+      <input label="Todo text" title="Todo text" placeholder="Search todo...." type="text" class="SearchTodo">
+      <button type="button" class="filterFirst" onclick="filterFirst()">latest first</button>
     </div>
       <div class="totalAmountOfTodos">Total Todos: 1</div>
 
@@ -26,19 +26,19 @@
 
         <div class="todo" style="margin: 0 0 2% 0;">
           <div class="todoContent">
-            <div class="todoNumber"><span>1</span>.</div>
+            <div class="todoNumber">1.</div>
             <input id="todoCheckbox1" type="checkbox">
             <div class="todoTitle">Lorem ipsum dolor sit.</div>
           </div>
-          <button class="btn-delete" onclick="delete('id')" label="delete button">DEL</button>
+          <button type="button" class="btn-delete" onclick="delete('id')" label="delete button">DEL</button>
         </div>
         <div class="todo">
           <div class="todoContent">
-            <div class="todoNumber"><span>1</span>.</div>
+            <div class="todoNumber">2.</div>
             <input id="todoCheckbox1" type="checkbox">
             <div class="todoTitle">Lorem ipsum dolor sit.</div>
           </div>
-          <button class="btn-delete" onclick="delete('id')" label="delete button">DEL</button>
+          <button type="button" class="btn-delete" onclick="delete('id')" label="delete button">DEL</button>
         </div>
   </div>
 
