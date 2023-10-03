@@ -17,7 +17,7 @@ getData(api.todos)
         console.log(todos);
     })
     .catch(error => {
-        console.error('GET DATA ERROR!', error);
+        console.error('Введіть у консоль: json-server --watch db.json', error);
     });
 
 
