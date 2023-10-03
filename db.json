@@ -1,0 +1,8 @@
+{
+  "users": [
+    { "id": 1, "name": "user1" }
+  ],
+  "todos": [
+    { "id": 1, "userId": 1, "body": "some todo", "completed": false }
+  ]
+}
