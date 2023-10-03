@@ -8,14 +8,14 @@
   <title>Todo list</title>
 </head>
 <body>
-  <h1>USER TODO LIST</h1>
+  <h1 onclick="selectUser()">USER TODO LIST</h1>
   <inout type="text" class="createNewTodo">
   <button class="add" onclick="addMenu()">ADD</button>
   <input type="text" class="SearchTodo">
   <div class="filterFirst" onclick="filterFirst()"></div>
   <div class="totalAmountOfTodos"></div>
   <div class="todoList">
-    <div class="todo"><div class="todoNumber"></div><input type="checkbox">TEXT</div> <button class="delete" onclick="delete('id')"></button>
+    <div class="todoID"><div class="todoNumber">1</div><input type="checkbox">TEXT</div> <button class="delete" onclick="delete('id')">DEL</button>
   </div>
   <div class="users">
     <select name="users-list" id="users-list">
@@ -38,5 +38,4 @@
   <div class="history"></div>
   <script src="./js/script.js"></script>
 </body>
-
 </html>
