@@ -25,6 +25,13 @@ getData(api.todos)
 // ----Code----
 let users = document.querySelector(".users");
 let history = document.querySelector(".history");
+let todosE = document.querySelectorAll(".todo");
+let totalAmountOfTodos = document.querySelector(".totalAmountOfTodos");
+
+setInterval(() => {
+    todosE = document.querySelectorAll(".todo");
+    totalAmountOfTodos.innerHTML = `Total Todos: ${todosE.length}`;
+}, 10);
 
 function renderTodos(todos, parElSelector) {
     todos.forEach((todo, i) => {
