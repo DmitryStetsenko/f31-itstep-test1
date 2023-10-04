@@ -9,7 +9,7 @@ const api = {
 
 let todos = [];
 let usersData = [];
-let selectedUserObj = {id: '', name:''};
+let selectedUserObj = { id: '', name: '' };
 
 getData(api.users)
     .then(data => {
@@ -21,12 +21,12 @@ getData(api.users)
         alert('Введіть у консоль: json-server --watch db.json');
     });
 
-    getData(api.todos)
+getData(api.todos)
     .then(data => {
         data.forEach((todo) => {
             const { id, userId, body } = todo;
             if (!todos[userId]) {
-                todos[userId] = []; 
+                todos[userId] = [];
             }
             todos[userId].push(todo);
         });
@@ -64,7 +64,7 @@ addTodoButton.addEventListener("click", () => {
 
     if (newTodo !== '') {
         addTodoToDbjson({
-            "userId": 1,
+            "userId": selectedUserObj['id'],
             "body": newTodo,
             "completed": false
         }).then(data => {
@@ -111,9 +111,7 @@ function renderTodo(parElSelector, todo, id) {
           `;
 
         parEl.innerHTML += newTodoItem;
-    }else{
-        parEl.innerHTML += `Empty`;
-    }
+    } 
 }
 
 function renderUsers(parElSelector, users) {
@@ -171,21 +169,21 @@ function filterFirst() {
 
 }
 
-function deleteE(id) {
-    const todoIndex = todos.findIndex(todo => todo.id === id);
+async function deleteE(id) {
+    const userId = selectedUserObj.id;
+    const todoIndex = todos[userId].findIndex(todo => todo.id === id);
 
     if (todoIndex !== -1) {
-        todos.splice(todoIndex, 1);
+        todos[userId].splice(todoIndex, 1);
         const todoItem = document.querySelector(`#todo${id}`);
         if (todoItem) {
             todoItem.remove();
         }
-        renderTodos(todos, '.todos');
-        totalAmountOfTodos.innerHTML = `Total Todos: ${todos.length}`;
-
-        deleteTodoFromDbJson(id)
+        totalAmountOfTodos.innerHTML = `Total Todos: ${todos[userId].length}`;
+        await deleteTodoFromDbJson(id);
     }
 }
+
 
 async function deleteTodoFromDbJson(todoId) {
     const url = `http://localhost:3000/todos/${todoId}`;
@@ -196,6 +194,6 @@ async function deleteTodoFromDbJson(todoId) {
         });
     } catch (error) {
         console.error(error);
-        return false; 
+        return false;
     }
 }
