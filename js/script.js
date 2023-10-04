@@ -8,12 +8,12 @@ const api = {
 }
 
 let todos = [];
-
+let usersData = []; 
 
 getData(api.users)
     .then(data => {
-        const users = data;
-        renderUsers('.usersList', users)
+        usersData = data; 
+        renderUsers('.usersList', usersData); 
     })
     .catch(error => {
         console.error('Введіть у консоль: json-server --watch db.json', error);
@@ -43,6 +43,7 @@ const todosList = document.querySelector(".todos");
 const totalAmountOfTodos = document.querySelector(".totalAmountOfTodos");
 const searchTodo = document.querySelector(".SearchTodo");
 const todoTitle = document.querySelectorAll(".todoTitle");
+const selectedUser = document.querySelector('.selectedUser');
 const addTodoButton = document.querySelector(".add");
 const inputTodo = document.querySelector(".createNewTodo");
 const usersList = document.querySelector(".usersList");
@@ -51,9 +52,6 @@ todosList.onchange = () => {
     // todosE = document.querySelectorAll(".todo");
     totalAmountOfTodos.innerHTML = `Total Todos: ${todos.length}`;
 };
-
-
-// ----functions-----
 
 addTodoButton.addEventListener("click", () => {
     const newTodo = inputTodo.value.trim();
@@ -69,6 +67,17 @@ addTodoButton.addEventListener("click", () => {
         });
     }
 });
+
+usersList.addEventListener("click", (event) => {
+    const selectedUserId = event.target.getAttribute("value"); 
+    const selectedUser = usersData.find(user => user.id === parseInt(selectedUserId)); 
+    if (selectedUser) {
+        const selectedUserElement = document.querySelector('.selectedUser');
+        selectedUserElement.innerHTML = `Selected User: ${selectedUser.name}`;
+    }
+});
+
+// ----functions-----
 
 function renderTodos(todos, parElSelector) {
     const parEl = doc.querySelector(parElSelector);
