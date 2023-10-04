@@ -4,10 +4,21 @@ const doc = document;
 
 const api = {
     todos: `http://localhost:3000/todos`,
+    users: `http://localhost:3000/users`,
 }
 
 let todos = [];
 
+
+getData(api.users)
+    .then(data => {
+        const users = data;
+        renderUsers('.usersList', users)
+    })
+    .catch(error => {
+        console.error('Введіть у консоль: json-server --watch db.json', error);
+        alert('Введіть у консоль: json-server --watch db.json');
+    });
 
 getData(api.todos)
     .then(data => {
@@ -34,6 +45,7 @@ const searchTodo = document.querySelector(".SearchTodo");
 const todoTitle = document.querySelectorAll(".todoTitle");
 const addTodoButton = document.querySelector(".add");
 const inputTodo = document.querySelector(".createNewTodo");
+const usersList = document.querySelector(".usersList");
 
 todosList.onchange = () => {
     // todosE = document.querySelectorAll(".todo");
@@ -84,6 +96,15 @@ function renderTodo(parElSelector, todo, id) {
 
         parEl.innerHTML += newTodoItem;
     }
+}
+
+function renderUsers(parElSelector, users){
+    const parEl = document.querySelector(parElSelector);
+
+    parEl.innerHTML = users.map(user => {
+        const {id, name} = user;
+        return `<div value="${id}">${name}</div>`
+    }).join('');
 }
 
 async function getData(url) {
