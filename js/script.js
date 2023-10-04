@@ -59,6 +59,8 @@ addTodoButton.addEventListener("click", () => {
 });
 
 function renderTodos(todos, parElSelector) {
+    const parEl = doc.querySelector(parElSelector);
+    parEl.innerHTML = '';
     todos.forEach((todo, i) => {
         renderTodo(parElSelector, todo, i + 1);
     });
@@ -131,5 +133,29 @@ function filterFirst() {
 }
 
 function deleteE(id) {
-    todosE[id].remove()
+    const todoIndex = todos.findIndex(todo => todo.id === id);
+
+    if (todoIndex !== -1) {
+        todos.splice(todoIndex, 1);
+        const todoItem = document.querySelector(`#todo${id}`);
+        if (todoItem) {
+            todoItem.remove();
+        }
+        renderTodos(todos, '.todos');
+        totalAmountOfTodos.innerHTML = `Total Todos: ${todos.length}`;
+
+        deleteTodoFromDbJson(id)
+    }
+}
+
+async function deleteTodoFromDbJson(todoId) {
+    const url = `http://localhost:3000/todos/${todoId}`;
+
+    try {
+        await fetch(url, {
+            method: 'DELETE',
+        });
+    } catch (error) {
+        console.error('An error occurred while deleting the todo:', error);
+    }
 }
