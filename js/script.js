@@ -54,11 +54,6 @@ const addTodoButton = document.querySelector(".add");
 const inputTodo = document.querySelector(".createNewTodo");
 const usersList = document.querySelector(".usersList");
 
-todosList.onchange = () => {
-    // todosE = document.querySelectorAll(".todo");
-    totalAmountOfTodos.innerHTML = `Total Todos: ${todos.length}`;
-};
-
 addTodoButton.addEventListener("click", () => {
     const newTodo = inputTodo.value.trim();
 
@@ -82,6 +77,7 @@ usersList.addEventListener("click", (event) => {
         selectedUserElement.innerHTML = `Selected User: ${selectedUserObj.name}`;
         renderTodos(todos[selectedUserObj.id], '.todos');
     }
+    totalAmountOfTodos.innerHTML = `Total Todos: ${todos[selectedUserObj['id']].length}`;
 });
 
 // ----functions-----
