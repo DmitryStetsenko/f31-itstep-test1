@@ -5,6 +5,7 @@ const doc = document;
 const api = {
     todos: `http://localhost:3000/todos`,
     users: `http://localhost:3000/users`,
+    history: `http://localhost:3000/history`,
 }
 
 let todos = [];
