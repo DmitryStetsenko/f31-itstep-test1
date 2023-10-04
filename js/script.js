@@ -11,7 +11,7 @@ let todos = [];
 
 getData(api.todos)
     .then(data => {
-        data.forEach(todo => todos.push(todo.body));
+        data.forEach(todo => todos.push(todo));
         renderTodos(todos, '.todos');
         totalAmountOfTodos.innerHTML = `Total Todos: ${todos.length}`;
 
@@ -52,7 +52,7 @@ addTodoButton.addEventListener("click", () => {
             "body": newTodo,
             "completed": false
         }).then(data => {
-            addTodo('.todos', newTodo, data.id);
+            renderTodo('.todos', newTodo, data.id);
             inputTodo.value = '';
         });
     }
@@ -60,12 +60,13 @@ addTodoButton.addEventListener("click", () => {
 
 function renderTodos(todos, parElSelector) {
     todos.forEach((todo, i) => {
-        addTodo(parElSelector, todo, i + 1);
+        renderTodo(parElSelector, todo, i + 1);
     });
 }
 
-function addTodo(parElSelector, title, id) {
+function renderTodo(parElSelector, todo, id) {
     const parEl = doc.querySelector(parElSelector);
+    const title = todo['body'];
 
     if (title.trim() !== '') {
         const newTodoItem = `
