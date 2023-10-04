@@ -10,6 +10,7 @@ const api = {
 
 let todos = [];
 let usersData = [];
+let historyArr = [];
 let selectedUserObj = { id: '', name: '' };
 
 getData(api.users)
@@ -37,7 +38,17 @@ getData(api.todos)
     })
     .catch(error => {
         console.error('Введіть у консоль: json-server --watch db.json', error);
-        alert('Введіть у консоль: json-server --watch db.json');
+    });
+
+getData(api.history)
+    .then(data => {
+        data.forEach(title => {
+            historyArr.push(title);
+        });
+        renderHistory('.historyList', historyArr);
+    })
+    .catch(error => {
+        console.error('Введіть у консоль: json-server --watch db.json', error);
     });
 
 
@@ -59,14 +70,37 @@ addTodoButton.addEventListener("click", () => {
     const newTodo = inputTodo.value.trim();
 
     if (newTodo !== '') {
+        const userId = selectedUserObj['id'];
+        const hisItem = `add new todo (${newTodo}) for user: ${selectedUserObj['name']}`;
+
+            
+        // getData(api.history)
+        //     .then(currentHistory => {
+        //         currentHistory.push(hisItem);
+        //         return updateHistoryOnServer(currentHistory);
+        //     })
+        //     .then(() => {
+        //         historyArr.push(hisItem);
+        //         renderHistory('.historyList', historyArr);
+        //         inputTodo.value = '';
+        //     });
+
         addTodoToDbjson({
-            "userId": selectedUserObj['id'],
+            "userId": userId,
             "body": newTodo,
             "completed": false
-        }).then(data => {
-            renderTodo('.todos', newTodo, data.id);
-            inputTodo.value = '';
-        });
+        })
+            .then(data => {
+                historyArr.push(hisItem);
+                renderHistory('.historyList', historyArr);
+                return updateHistoryOnServer(historyArr);
+            })
+            .then(() => {
+                inputTodo.value = '';
+            })
+            .catch(error => {
+                console.error('Error adding todo:', error);
+            });
     }
 });
 
@@ -82,6 +116,12 @@ usersList.addEventListener("click", (event) => {
 });
 
 // ----functions-----
+
+function renderHistory(parElSelector, history) {
+    const parEl = doc.querySelector(parElSelector);
+
+    parEl.innerHTML = history.map(title => `<li>${title}</li>`).join('');
+}
 
 function renderTodos(todos, parElSelector) {
     const parEl = doc.querySelector(parElSelector);
@@ -108,7 +148,7 @@ function renderTodo(parElSelector, todo, id) {
           `;
 
         parEl.innerHTML += newTodoItem;
-    } 
+    }
 }
 
 function renderUsers(parElSelector, users) {
@@ -137,6 +177,29 @@ async function addTodoToDbjson(todoObj) {
     const data = await res.json();
     return data;
 }
+
+// async function updateHistoryOnServer(newHistoryItem) {
+//     const url = api.history;
+
+//     try {
+//         const response = await fetch(url);
+//         let currentHistory = await response.json();
+
+//         currentHistory.push(newHistoryItem);
+
+//         await fetch(url, {
+//             method: 'PUT',
+//             headers: {
+//                 'Content-Type': 'application/json',
+//             },
+//             body: JSON.stringify(currentHistory),
+//         });
+//     } catch (error) {
+//         console.error( error);
+//     }
+// }
+
+
 
 function selectUser() {
     if (users.style.opacity == "1") {
@@ -171,15 +234,19 @@ async function deleteE(id) {
     const todoIndex = todos[userId].findIndex(todo => todo.id === id);
 
     if (todoIndex !== -1) {
-        todos[userId].splice(todoIndex, 1);
+        const deletedTodo = todos[userId].splice(todoIndex, 1)[0];
         const todoItem = document.querySelector(`#todo${id}`);
+
         if (todoItem) {
             todoItem.remove();
         }
+
         totalAmountOfTodos.innerHTML = `Total Todos: ${todos[userId].length}`;
-        await deleteTodoFromDbJson(id);
+
+        await deleteTodoFromDbJson(deletedTodo.id);
     }
 }
+
 
 
 async function deleteTodoFromDbJson(todoId) {
