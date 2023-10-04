@@ -8,25 +8,31 @@ const api = {
 }
 
 let todos = [];
-let usersData = []; 
+let usersData = [];
+let selectedUserObj = {id: '', name:''};
 
 getData(api.users)
     .then(data => {
-        usersData = data; 
-        renderUsers('.usersList', usersData); 
+        usersData = data;
+        renderUsers('.usersList', usersData);
     })
     .catch(error => {
         console.error('Введіть у консоль: json-server --watch db.json', error);
         alert('Введіть у консоль: json-server --watch db.json');
     });
 
-getData(api.todos)
+    getData(api.todos)
     .then(data => {
-        data.forEach(todo => todos.push(todo));
+        data.forEach((todo) => {
+            const { id, userId, body } = todo;
+            if (!todos[userId]) {
+                todos[userId] = []; 
+            }
+            todos[userId].push(todo);
+        });
+        console.log(todos);
         renderTodos(todos, '.todos');
         totalAmountOfTodos.innerHTML = `Total Todos: ${todos.length}`;
-
-        console.log(todos);
     })
     .catch(error => {
         console.error('Введіть у консоль: json-server --watch db.json', error);
@@ -69,11 +75,12 @@ addTodoButton.addEventListener("click", () => {
 });
 
 usersList.addEventListener("click", (event) => {
-    const selectedUserId = event.target.getAttribute("value"); 
-    const selectedUser = usersData.find(user => user.id === parseInt(selectedUserId)); 
-    if (selectedUser) {
+    const selectedUserId = event.target.getAttribute("value");
+    selectedUserObj = usersData.find(user => user.id === parseInt(selectedUserId));
+    if (selectedUserObj) {
         const selectedUserElement = document.querySelector('.selectedUser');
-        selectedUserElement.innerHTML = `Selected User: ${selectedUser.name}`;
+        selectedUserElement.innerHTML = `Selected User: ${selectedUserObj.name}`;
+        renderTodos(todos[selectedUserObj.id], '.todos');
     }
 });
 
@@ -104,14 +111,16 @@ function renderTodo(parElSelector, todo, id) {
           `;
 
         parEl.innerHTML += newTodoItem;
+    }else{
+        parEl.innerHTML += `Empty`;
     }
 }
 
-function renderUsers(parElSelector, users){
+function renderUsers(parElSelector, users) {
     const parEl = document.querySelector(parElSelector);
 
     parEl.innerHTML = users.map(user => {
-        const {id, name} = user;
+        const { id, name } = user;
         return `<div value="${id}">${name}</div>`
     }).join('');
 }
@@ -186,6 +195,7 @@ async function deleteTodoFromDbJson(todoId) {
             method: 'DELETE',
         });
     } catch (error) {
-        console.error('An error occurred while deleting the todo:', error);
+        console.error(error);
+        return false; 
     }
 }
