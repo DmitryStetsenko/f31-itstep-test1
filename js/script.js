@@ -212,8 +212,8 @@ function selectUser() {
 
 function selectHistory() {
 
-    if (history.style.opacity == "1") {
-        history.style.opacity = "0";
+    if (history.style.opacity == "0") {
+        history.style.opacity = "1";
     }
     else {
         history.style.opacity = "1";
@@ -261,3 +261,64 @@ async function deleteTodoFromDbJson(todoId) {
         return false;
     }
 }
+
+
+
+// history list functionality
+async function addToHistory(userName, todoText){
+const hisItem = `add todo(${todoText}) for user: ${userName}`;
+try {
+    const updatedHistory = await updateHistoryOnServer([...historyArr, hisItem]);
+    if (updatedHistory) {
+        historyArr = updatedHistory;
+        renderHistory('.historyList', historyArr);
+    }
+} catch (error) {
+    console.error('Error updating history:', error);
+}
+}
+
+
+// this function will catch every problem which can exist and make changes in json history field
+async function updateHistoryOnServer(newHistory) {
+    const url = api.history;
+
+    try {
+        await fetch(url, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ history: newHistory }), 
+        });
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+//that function will start previous 2 functions from the button and check if everything is okay with errors
+addTodoButton.addEventListener("click", () => {
+    const newTodo = inputTodo.value.trim();
+
+    if (newTodo !== '') {
+        const userId = selectedUserObj['id'];
+        const userName = selectedUserObj['name'];
+
+        addTodoToDbjson({
+            "userId": userId,
+            "body": newTodo,
+            "completed": false
+        })
+        .then(data => {
+            
+            addToHistory(userName, newTodo);
+            
+            inputTodo.value = '';
+        })
+        .catch(error => {
+            console.error('Error adding todo:', error);
+        });
+    }
+});
+
+
